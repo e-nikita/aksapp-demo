@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: aks-app
-        image: myacr123.azurecr.io/aks-app:PLACEHOLDER
+        image: myacrtestvik.azurecr.io/aks-app:PLACEHOLDER
         ports:
         - containerPort: 3000
