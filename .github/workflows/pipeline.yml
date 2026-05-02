@@ -30,12 +30,14 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Build Image in ACR (Cloud Build)
-        run: |
-          az acr build \
-            --registry $ACR_NAME \
-            --image $ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }} \
-            .
+      - name: Login to ACR
+        run: az acr login --name $ACR_NAME
+
+      - name: Build Docker Image
+        run: docker build -t $ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }} .
+
+      - name: Push Docker Image
+        run: docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }}
 
   deploy-dev:
     name: Deploy to DEV
