@@ -117,5 +117,5 @@ jobs:
 
       - name: Deploy to PROD Namespace
         run: |
-          sed -i "s/PLACEHOLDER/${{ needs.build.outputs.image_tag }}/g" k8s/prod/deployment.yaml
+          sed -i "s/PLACEHOLDER/${{ needs.build.outputs.image_tag }}/g" k8s/prod/deployment.yml
           kubectl apply -f k8s/prod/
