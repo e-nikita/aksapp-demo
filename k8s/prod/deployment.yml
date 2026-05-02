@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aks-app
+  template:
+    metadata:
+      labels:
+        app: aks-app
+    spec:
+      containers:
+      - name: aks-app
+        image: myacr123.azurecr.io/aks-app:PLACEHOLDER
+        ports:
+        - containerPort: 3000
