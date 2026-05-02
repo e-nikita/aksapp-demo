@@ -91,7 +91,7 @@ jobs:
       - name: Deploy to STAGING Namespace
         run: |
           sed -i "s/PLACEHOLDER/${{ needs.build.outputs.image_tag }}/g" k8s/stage/deployment.yml
-          kubectl apply -f k8s/staging/
+          kubectl apply -f k8s/stage/
 
   deploy-prod:
     name: Deploy to PROD
