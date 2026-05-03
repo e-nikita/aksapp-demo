@@ -7,8 +7,13 @@ app.get("/", (req, res) => {
   res.send("Hello from AKS DevOps Project 🚀");
 });
 
-app.get("/health", (req, res) => {
+/*app.get("/health", (req, res) => {
   res.status(200).send("OK");
+});
+*/
+
+app.get("/health", (req, res) => {
+  res.status(500).send("FAIL");
 });
 
 app.listen(PORT, () => {
