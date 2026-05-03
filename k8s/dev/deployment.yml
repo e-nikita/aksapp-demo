@@ -18,13 +18,13 @@ spec:
         image: myacrtestvik.azurecr.io/aks-app:PLACEHOLDER
         ports:
         - containerPort: 3000
-        liveness:
+        livenessProbe:
           httpGet:
             path: /health
             port: 3000
           initialDelaySeconds: 10
           periodSeconds: 10
-        readiness:
+        readinessProbe:
           httpGet:
             path: /health
             port: 3000
