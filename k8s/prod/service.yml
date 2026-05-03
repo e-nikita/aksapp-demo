@@ -4,7 +4,7 @@ metadata:
   name: aks-app-service
   namespace: prod
 spec:
-  type: LoadBalancer
+  type: ClusterIP      # earlier we were using Loadbalancer , the to use ingress change to ClusterIP
   selector:
     app: aks-app
   ports:
