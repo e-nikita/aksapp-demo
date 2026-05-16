@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: aks-app
-        image: myacrtestvik.azurecr.io/aks-app:PLACEHOLDER
+        image: myacrtestvik.azurecr.io/aks-app:12b85a10eb8ba7ae941be3f599c4587d15555184   # remove placeholder  with latest pushed image tag myacrtestvik.azurecr.io/aks-app:PLACEHOLDER
         ports:
         - containerPort: 3000
         livenessProbe:
