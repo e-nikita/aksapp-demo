@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello from AKS DevOps Project 🚀");
+  res.send("Hello from ArgoCD GitOps 🚀");
 });
 
 app.get("/health", (req, res) => {
